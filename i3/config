@@ -85,10 +85,10 @@ bindsym $mod+d exec rofi -show run -lines 10 -bw 0 -theme ~/.config/rofi/theme.r
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        position top
-}
+#bar {
+#        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#        position top
+#}
 
 bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
 
@@ -118,8 +118,8 @@ set $workspace1 "1: Terminals "
 set $workspace2 "2: Code "
 set $workspace3 "3: Firefox "
 set $workspace4 "4: Explore "
-set $workspace5 "5"
-set $workspace6 "6"
+set $workspace5 "5: Documents"
+set $workspace6 "6: Games "
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
@@ -193,6 +193,7 @@ bindsym $mod+a focus parent
 # Customized workspaces
 
 assign [class="Code"] $workspace2
+assign [class="Ankama Launcher"] $workspace6
 #assign [class="Firefox"] $workspace3
 #assign [class="Nautilus"] $workspace4
 
@@ -253,8 +254,9 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 #always execute commands
-exec_always feh --bg-scale /home/kmilo9713/Imágenes/wallpaper5.jpg
-#exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always feh --bg-scale /home/kmilo9713/Imágenes/Wallpapers/abstract.png
+#/Daft/daft-punk-typography-minimalism-wide-1366x768.jpg
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id compton --backend glx --vsync opengl --config ~/.config/compton.conf
 
 # Personal commands
@@ -262,3 +264,4 @@ exec_always --no-startup-id compton --backend glx --vsync opengl --config ~/.con
 bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+v exec Code
 bindsym $mod+Shift+n exec nautilus
+bindsym $mod+Shift+p exec poweroff
